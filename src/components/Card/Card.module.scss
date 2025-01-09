@@ -1,6 +1,37 @@
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-inline: 20px;
+  height: 200px;
+  width: 700px;
+  box-shadow: 0 0 5px lightgray;
+}
+
+.firstCardGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 34%;
+  border-right: solid;
+  border-width: 2px;
+  border-color: lightgray;
+}
+
+.firstCardGroupContent {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .buyButton {
   color: white;
-  background-color: orange;
+  background-color: darkorange;
   border-style: none;
   border-radius: 5px;
   font-size: larger;
@@ -8,4 +39,51 @@
   height: 60px;
   width: 150px;
   cursor: pointer;
+}
+
+.aviaCompanyImage {
+  object-fit: contain;
+  margin-bottom: 30px;
+}
+
+.secondCardGroup {
+  height: 100%;
+  width: 66%;
+}
+
+.secondCardGroupContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stopsGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardInfoItem {
+  margin: 15px;
+}
+
+.departureInfo {
+  text-align: left;
+}
+
+.arrivalInfo {
+  text-align: right;
+}
+
+.ticketTime {
+  font-size: 40px;
+}
+
+.departure {
+  font-weight: bold;
+}
+
+.date {
+  color: gray;
 }

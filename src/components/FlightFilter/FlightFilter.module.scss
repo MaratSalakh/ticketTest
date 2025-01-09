@@ -1,0 +1,86 @@
+.flightFilter {
+  border-radius: 5px;
+  padding: 15px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  box-shadow: 0 0 5px lightgray;
+}
+
+.currency {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.currencyItemLeft {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-width: 1px;
+  border-color: lightgray;
+  border-style: solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 60px;
+  cursor: pointer;
+}
+
+.currencyItemCenter {
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 60px;
+  cursor: pointer;
+}
+
+.currencyItemRight {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-width: 1px;
+  border-color: lightgray;
+  border-style: solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 60px;
+  cursor: pointer;
+}
+
+.currencyItemHover:hover {
+  background-color: #577bc1;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.secondGroup {
+  margin-top: 15px;
+}
+
+.stopsCount {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.stopItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.selectedCurrency {
+  background-color: #344cb7;
+}
