@@ -1,4 +1,3 @@
-import cn from "classnames";
 import styles from "./Card.module.scss";
 import logo from "../../assets/turkish_Airlines_logo_2019_compact.png";
 
@@ -30,6 +29,19 @@ export const Card = (props: { ticketData: TicketData; currency: string }) => {
     }
   };
 
+  const stopsMatcher = (stops: number) => {
+    switch (stops) {
+      case 0:
+        return "ПЕРЕСАДОК";
+      case 1:
+        return "ПЕРЕСАДКА";
+      case 2:
+        return "ПЕРЕСАДКИ";
+      case 3:
+        return "ПЕРЕСАДКИ";
+    }
+  };
+
   return (
     <div className={styles.card}>
       <div className={styles.firstCardGroup}>
@@ -50,7 +62,7 @@ export const Card = (props: { ticketData: TicketData; currency: string }) => {
 
       <div className={styles.secondCardGroup}>
         <div className={styles.secondCardGroupContent}>
-          <div className={cn(styles.cardInfoItem, styles.departureInfo)}>
+          <div className={styles.departureInfo}>
             <span className={styles.ticketTime}>
               {ticketData.departure_time}
             </span>
@@ -60,14 +72,14 @@ export const Card = (props: { ticketData: TicketData; currency: string }) => {
             <div className={styles.date}>{ticketData.departure_date}</div>
           </div>
 
-          <div className={styles.cardInfoItem}>
-            <div className={styles.stopsGroup}>
-              <span>{ticketData.stops} ПЕРЕСАДКА</span>
-              <div className={styles.flyLine}></div>
-            </div>
+          <div className={styles.stopsGroup}>
+            <span>
+              {ticketData.stops} {stopsMatcher(ticketData.stops)}
+            </span>
+            <div className={styles.flyLine}></div>
           </div>
 
-          <div className={cn(styles.cardInfoItem, styles.arrivalInfo)}>
+          <div className={styles.arrivalInfo}>
             <div className={styles.ticketTime}>{ticketData.arrival_time}</div>
             <div className={styles.departure}>
               {ticketData.destination_name}, {ticketData.destination}

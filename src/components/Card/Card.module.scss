@@ -68,15 +68,17 @@
   align-items: center;
 }
 
-.cardInfoItem {
-  margin: 15px;
-}
-
 .departureInfo {
+  width: 33%;
+  margin-left: 15px;
+  margin-top: 15px;
   text-align: left;
 }
 
 .arrivalInfo {
+  width: 33%;
+  margin-right: 15px;
+  margin-top: 15px;
   text-align: right;
 }
 
