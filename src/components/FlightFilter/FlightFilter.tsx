@@ -4,8 +4,10 @@ import styles from "./FlightFilter.module.scss";
 export const FlightFilter = (props: {
   currency: string | undefined;
   setCurrency: React.Dispatch<React.SetStateAction<string>>;
+  stops: string;
+  setStops: React.Dispatch<React.SetStateAction<string>>;
 }) => {
-  const { currency, setCurrency } = props;
+  const { currency, setCurrency, stops, setStops } = props;
 
   const selectedStyles = (buttonCurrency: string | undefined) => {
     return buttonCurrency === currency
@@ -42,22 +44,22 @@ export const FlightFilter = (props: {
       <div className={styles.secondGroup}>
         <div className={styles.title}>КОЛИЧЕСТВО ПЕРЕСАДОК</div>
         <div className={styles.stopsCount}>
-          <div className={styles.stopItem}>
-            <input type="checkbox" />
+          <div onClick={() => setStops("all")} className={styles.stopItem}>
+            <input type="checkbox" checked={stops === "all"} />
             All
           </div>
-          <div className={styles.stopItem}>
-            <input type="checkbox" />
+          <div onClick={() => setStops("0")} className={styles.stopItem}>
+            <input type="checkbox" checked={stops === "0"} />
             Без пересадок
           </div>
-          <div className={styles.stopItem}>
-            <input type="checkbox" />1 пересадка
+          <div onClick={() => setStops("1")} className={styles.stopItem}>
+            <input type="checkbox" checked={stops === "1"} />1 пересадка
           </div>
-          <div className={styles.stopItem}>
-            <input type="checkbox" />2 пересадки
+          <div onClick={() => setStops("2")} className={styles.stopItem}>
+            <input type="checkbox" checked={stops === "2"} />2 пересадки
           </div>
-          <div className={styles.stopItem}>
-            <input type="checkbox" />3 пересадки
+          <div onClick={() => setStops("3")} className={styles.stopItem}>
+            <input type="checkbox" checked={stops === "3"} />3 пересадки
           </div>
         </div>
       </div>

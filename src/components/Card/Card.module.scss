@@ -41,6 +41,10 @@
   cursor: pointer;
 }
 
+.buyButton:hover {
+  background-color: orangered;
+}
+
 .aviaCompanyImage {
   object-fit: contain;
   margin-bottom: 30px;

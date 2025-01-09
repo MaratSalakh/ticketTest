@@ -16,8 +16,19 @@ type TicketData = {
   price: number;
 };
 
-export const Card = (props: { ticketData: TicketData }) => {
-  const { ticketData } = props;
+export const Card = (props: { ticketData: TicketData; currency: string }) => {
+  const { ticketData, currency } = props;
+
+  const priceMatcher = (price: number, localCurrency: string) => {
+    switch (localCurrency) {
+      case "rub":
+        return <>{price} &#8381;</>;
+      case "usd":
+        return <>{(price / 100).toFixed(1)} $</>;
+      case "eur":
+        return <>{(price / 110).toFixed(1)} &#8364;</>;
+    }
+  };
 
   return (
     <div className={styles.card}>
@@ -32,7 +43,7 @@ export const Card = (props: { ticketData: TicketData }) => {
           />
           <button className={styles.buyButton}>
             <div>Купить</div>
-            за {ticketData.price} Р
+            за {priceMatcher(ticketData.price, currency)}
           </button>
         </div>
       </div>
